@@ -1,17 +1,17 @@
-export const runtime = "edge";
 'use client';
+export const runtime = "edge";
 
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Progress } from "@/components/ui/progress";
+// import { Progress } from "@/components/ui/progress"; // Commented out
 import { useRouter } from 'next/navigation';
 import { GitBranch, Github } from 'lucide-react';
 
 export default function Check() {
   const [repoUrl, setRepoUrl] = useState('');
   const [branch, setBranch] = useState('');
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(0); // Keep state for now, just don't use it with Progress
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const router = useRouter();
 
@@ -24,7 +24,7 @@ export default function Check() {
       // Simulate progress
       for (let i = 0; i <= 100; i += 10) {
         await new Promise(resolve => setTimeout(resolve, 500));
-        setProgress(i);
+        // setProgress(i); // Commented out
       }
 
       router.push('/results');
@@ -84,9 +84,10 @@ export default function Check() {
 
         {isAnalyzing && (
           <div className="space-y-4">
-            <Progress value={progress} className="h-2" />
+            {/* <Progress value={progress} className="h-2" /> */}
             <p className="text-center text-sm text-muted-foreground">
-              Analyzing repository compliance... {progress}%
+              {/* Analyzing repository compliance... {progress}% */}
+              Analyzing repository compliance...
             </p>
           </div>
         )}
