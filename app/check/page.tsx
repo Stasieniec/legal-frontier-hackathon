@@ -1,5 +1,5 @@
 'use client';
-export const runtime = "edge";
+// export const runtime = "edge"; // Removed - conflicts with 'use client'
 
 import { useState } from 'react';
 // import { Button } from "@/components/ui/button"; // Commented out
