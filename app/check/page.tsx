@@ -2,8 +2,8 @@
 export const runtime = "edge";
 
 import { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+// import { Button } from "@/components/ui/button"; // Commented out
+// import { Input } from "@/components/ui/input"; // Commented out
 // import { Progress } from "@/components/ui/progress"; // Commented out
 // import { useRouter } from 'next/navigation'; // Commented out
 // import { GitBranch, Github } from 'lucide-react'; // Commented out
@@ -11,9 +11,9 @@ import { Input } from "@/components/ui/input";
 export default function Check() {
   const [repoUrl, setRepoUrl] = useState('');
   const [branch, setBranch] = useState('');
-  // const [progress, setProgress] = useState(0); // Keep state for now, just don't use it with Progress - actually, let's comment this too if Progress is out
+  // const [progress, setProgress] = useState(0);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-  // const router = useRouter(); // Commented out
+  // const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,10 +24,10 @@ export default function Check() {
       // Simulate progress
       for (let i = 0; i <= 100; i += 10) {
         await new Promise(resolve => setTimeout(resolve, 500));
-        // setProgress(i); // Commented out
+        // setProgress(i);
       }
 
-      // router.push('/results'); // Commented out
+      // router.push('/results');
       console.log('Would navigate to /results'); // Placeholder
     } catch (error) {
       console.error('Analysis failed:', error);
@@ -51,13 +51,14 @@ export default function Check() {
               {/* <Github className="h-5 w-5" /> */}
               <label className="text-sm font-medium">Repository URL</label>
             </div>
-            <Input
+            {/* <Input
               placeholder="https://github.com/username/repository"
               value={repoUrl}
               onChange={(e) => setRepoUrl(e.target.value)}
               required
               className="bg-card"
-            />
+            /> */}
+            <input type="text" placeholder="https://github.com/username/repository" value={repoUrl} onChange={(e) => setRepoUrl(e.target.value)} required className="bg-card w-full p-2 border rounded" /> {/* Placeholder for Input */}
           </div>
 
           <div className="space-y-2">
@@ -65,22 +66,26 @@ export default function Check() {
               {/* <GitBranch className="h-5 w-5" /> */}
               <label className="text-sm font-medium">Branch Name</label>
             </div>
-            <Input
+            {/* <Input
               placeholder="main"
               value={branch}
               onChange={(e) => setBranch(e.target.value)}
               required
               className="bg-card"
-            />
+            /> */}
+            <input type="text" placeholder="main" value={branch} onChange={(e) => setBranch(e.target.value)} required className="bg-card w-full p-2 border rounded" /> {/* Placeholder for Input */}
           </div>
 
-          <Button 
+          {/* <Button 
             type="submit" 
             className="w-full"
             disabled={isAnalyzing}
           >
             {isAnalyzing ? 'Analyzing...' : 'Start Analysis'}
-          </Button>
+          </Button> */}
+          <button type="submit" className="w-full p-2 bg-primary text-primary-foreground rounded" disabled={isAnalyzing}>
+            {isAnalyzing ? 'Analyzing...' : 'Start Analysis'}
+          </button> {/* Placeholder for Button */}
         </form>
 
         {isAnalyzing && (
