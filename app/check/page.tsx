@@ -5,15 +5,15 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 // import { Progress } from "@/components/ui/progress"; // Commented out
-import { useRouter } from 'next/navigation';
-import { GitBranch, Github } from 'lucide-react';
+// import { useRouter } from 'next/navigation'; // Commented out
+// import { GitBranch, Github } from 'lucide-react'; // Commented out
 
 export default function Check() {
   const [repoUrl, setRepoUrl] = useState('');
   const [branch, setBranch] = useState('');
-  const [progress, setProgress] = useState(0); // Keep state for now, just don't use it with Progress
+  // const [progress, setProgress] = useState(0); // Keep state for now, just don't use it with Progress - actually, let's comment this too if Progress is out
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const router = useRouter();
+  // const router = useRouter(); // Commented out
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,7 +27,8 @@ export default function Check() {
         // setProgress(i); // Commented out
       }
 
-      router.push('/results');
+      // router.push('/results'); // Commented out
+      console.log('Would navigate to /results'); // Placeholder
     } catch (error) {
       console.error('Analysis failed:', error);
       setIsAnalyzing(false);
@@ -47,7 +48,7 @@ export default function Check() {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
             <div className="flex items-center space-x-2">
-              <Github className="h-5 w-5" />
+              {/* <Github className="h-5 w-5" /> */}
               <label className="text-sm font-medium">Repository URL</label>
             </div>
             <Input
@@ -61,7 +62,7 @@ export default function Check() {
 
           <div className="space-y-2">
             <div className="flex items-center space-x-2">
-              <GitBranch className="h-5 w-5" />
+              {/* <GitBranch className="h-5 w-5" /> */}
               <label className="text-sm font-medium">Branch Name</label>
             </div>
             <Input
