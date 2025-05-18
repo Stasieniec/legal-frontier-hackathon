@@ -1,13 +1,15 @@
 # Legal Frontier Hackathon Project
 
-## Setup Instructions
+AI Act compliance checker for GitHub repositories.
+
+## Setup
 
 1. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Create a `.env.local` file in the root of the project with your n8n webhook URL:
+2. Create a `.env.local` file in the root of the project:
    ```
    NEXT_PUBLIC_WEBHOOK_URL=https://your-n8n-webhook-url
    ```
@@ -17,37 +19,28 @@
    npm run dev
    ```
 
-## About the Integration
+## Backend
 
-This project integrates with an n8n webhook that analyzes GitHub repositories for AI Act compliance. The webhook requires:
+The backend is implemented using n8n workflows and is saved in the `n8n_BACKEND_WITH_WEBHOOKS.json` file in this repository. You can import this file into your n8n instance to set up the required webhook.
 
-- `repo_url`: The URL of the GitHub repository
-- `branch_name`: The name of the branch to analyze
+The webhook expects:
+- `repo_url`: GitHub repository URL
+- `branch_name`: Branch name to analyze
 
-The webhook returns an array with the following structure:
-
+The webhook returns:
 ```json
 [
   {
     "classification": "Limited risk",
-    "assessment": "The repository contains AI systems with limited risk...",
-    "legal_obligations": "[\"Obligation 1\", \"Obligation 2\", \"Obligation 3\"]"
+    "assessment": "Assessment text...",
+    "legal_obligations": "[\"Obligation 1\", \"Obligation 2\"]"
   }
 ]
 ```
 
-Note: The `legal_obligations` field is a JSON string that will be parsed by the application.
+## Technologies
 
-## Technical Implementation
-
-The application uses:
-- Next.js for the frontend
+- Next.js
+- Tailwind CSS + shadcn/ui
 - Zustand for state management
-- Tailwind CSS and shadcn/ui for styling
-- API integration with n8n webhook
-
-The main functionality is implemented in:
-- `app/check/page.tsx`: Form to collect repository information
-- `app/results/page.tsx`: Display of compliance results
-- `hooks/useAnalysisStore.ts`: Global state management
-- `lib/api.ts`: API integration with the webhook 
+- n8n for backend processing
