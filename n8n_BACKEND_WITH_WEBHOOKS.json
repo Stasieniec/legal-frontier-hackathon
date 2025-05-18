@@ -1,0 +1,865 @@
+{
+  "name": "Hackathon Main",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "e285ff4b-2834-4ef1-8436-51c85d19d8d1",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -780,
+        -200
+      ],
+      "id": "57ae9ca7-7dc0-4d5b-9e1c-3909d347267e",
+      "name": "Webhook",
+      "webhookId": "e285ff4b-2834-4ef1-8436-51c85d19d8d1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are acting as an agent for a software company preparing to deploy its artificial intelligence product in the European Union. Your task is to classify the product’s risk cattegory within the EU AI Act. Warning: the product might not be AI or there might be limited information about the provided factors. In that case, classify it anyway. \n\nHere are available risk categories:\n1. Minimal risk\n2. Limited (Transparency) risk\n3. High risk\n4. Unacceptable risk\n\nAlso: This is just a demo MVP. Therefore, it does not truly matter how accurate you are. The most important part for you is that you have to generate a reslut. I would much rather have you return something that looks ok than to waste tokens and think for multiple iterations. Therefore, be as swift as possible - try to not waste tokens and decide on the classification as soon as you can.\n\nTo do this:\nIntegrate insights from:\nThe summary of the code provided to you\nThe list of factors you have to watch out for\n\nUse tools:\n\n\nReference the product codebase\nReference the EU AI Act\n\n\nDeliver the following output:\n1. A classification of the AI system into one of the four risk categories defined by the Act.\n2. The main reasons for this classification, based on both the technical features and regulatory criteria.\n3. A list of legal obligations and requirements that apply to the system under the assigned risk category, as specified in the supporting documentation.\n\n\nEnsure your analysis is correct but at the same time don't go too deep into details. IMPORTANT: This is a DEMO VERSION OF THE PRODUCT. If something does not make sense or you cannot make a clear judgement, don’t worry and assign it whatever classification. You have to always return some results. Moreover, assign higher risk classification only when it is backed by evidence. Otherwise, assign it some lower risk. If its not clear what should it be classified as, still assign it something! And please, don't reason for too long.\n\nBEGINNING OF IMPORTANT EVALUATION FACTORS THAT YOU SHOULD WATCH OUT FOR (they should be mentioned in the summary)\nUses biometric identification \nUses biometric categorisation \nThe system uses IoT sensors \nMakes decisions about movement of objects  \nMakes decisions about continuing of a machine operation \nAssigns scores to users \nEvaluates the performance of users \nCaptures real-time bodily movements \nCaptures video footage \ngenerate feedback based on sensor input \nEvaluation of user’s past achievements \nAssigns scores to database inputs \nDetermines user’s access to applications, functions and databases \nDetermining user’s payout/compensation/reward/salary\nSends signals to other users (eg. police, courts…) once certain conditions are met \nGenerates text, audio, visual or image content \nIntegrates/ interacts with other systems/AIs\nCreates labels for data points/inputs \nClassifying users based on known data \nMaking inferences about users based on data\nControlling which decisions the user is allowed to make\nMake inferences about decision patterns \nAlter user’s decision patterns \nCreate reputation score\nCreate social score\nCreate social rating\nAssign values to users\nRate users\nCompare users\nRank users\nEmotion recognition\nScrape dataset\nInference models identifying race, gender, age, etc.\nUse public datasets\nProfiles users based on behavior, location, or personal traits.\nAdvanced analysis \nCondensing information by extracting key factors \nCollects sensitive information \nTriggers emergency protocols such as seize operations immediately \nMakes evaluations about potential danger \nUses biometric information to infer user’s emotions \nChecks for statistical imbalances (aka bias detection) \nImpersonation \nOperations which may be used for Psychographic profiling\ninfer user’s emotional states \nInfer user’s personal values \nUsing user data for purposes misaligned with user interests\nLeveraging age-specific cognitive or behavioral limitations\nLeveraging cognitive or behavioral limitations \nEvaluate crime prediction\n\n\nEND OF IMPORTANT EVALUATION FACTORS\n\nLegal obligations that the user has to satisfy depend on their risk classification and are clearly outlined by the EU. Here is the list of all legal obligations for different classifications:\n\nSTART OF LEGAL OBLIGATIONS:\nLegal obligations for each risk category \n\n\nLegal obligations for High risk: \n\nReference: Article 17\nActions:\nImplement a documented system that includes:\n\n\nCompliance policies and procedures\n\n\nRisk management system\n\n\nData governance and management\n\n\nDesign, development, testing, validation, and post-market monitoring procedures\n\n\nSTEP 2: Perform a Conformity Assessment\nReference: Article 19–20\nActions:\nCarry out a risk and performance assessment to demonstrate compliance with:\n\n\nRisk management (Art. 9)\n\n\nData and data governance (Art. 10)\n\n\nTechnical documentation (Art. 11)\n\n\nRecord keeping (Art. 12)\n\n\nTransparency and instructions (Art. 13)\n\n\nHuman oversight (Art. 14)\n\n\nAccuracy, robustness, and cybersecurity (Art. 15)\n\n\nIf your AI uses standard solutions or is off-the-shelf, check if a harmonised standard or common specification exists.\nDocumentation: Complete and retain a technical file showing how your system complies.\nStep by step\nA: Conduct Risk Management Process (Article 9)\nActions:\nIdentify risks across the AI system's lifecycle (design → decommission).\n\n\nClassify risks: e.g., physical harm, bias, cybersecurity, data leakage.\n\n\nMitigate risks: Apply safety measures (technical, organisational).\n\n\nVerify effectiveness: Test if controls reduce risk to acceptable levels.\n\n\nDocument everything in a Risk Management File.\n\n\nInclude:\nRisk matrix\n\n\nHazard identification methods\n\n\nMitigation traceability\n\n\nSee our template here: …\nB: Assess Data and Data Governance (Article 10)\nActions:\nDefine datasets used (training, validation, testing).\n\n\nDocument data sources and data acquisition methods.\n\n\nCheck data quality: accuracy, representativeness, completeness.\n\n\nApply preprocessing steps: filtering, cleaning, bias mitigation.\n\n\nImplement data access controls: who can view/edit what.\n\n\nValidate against harmful bias or imbalances.\n\n\nInclude:\nData sheets for datasets\n\n\nRecords of preprocessing and labeling steps\n\n\nBias testing results\n\n\nC: Prepare Technical Documentation (Article 11)\nActions:\nDescribe the AI system:\n\n\nPurpose, intended users, input/output formats\n\n\nProvide system architecture:\n\n\nComponents, interfaces, algorithms\n\n\nExplain design and development process\n\n\nAdd performance metrics from testing (accuracy, F1, etc.)\n\n\nInclude cybersecurity measures\n\n\nOrganize as a Technical File with:\nSystem overview\n\n\nDiagrams\n\n\nTesting reports\n\n\nChange logs\n\n\nRetention: 10 years after market entry\nD: Set Up Record Keeping (Article 12)\nActions:\nEnable automatic logging of key operations:\n\n\nSystem decisions\n\n\nAccess logs\n\n\nAlerts/errors\n\n\nKeep logs for traceability (input → decision → output)\n\n\nDefine log retention period and access rights\n\n\nValidate logs are tamper-resistant\n\n\nInclude:\nLogging policy\n\n\nExample logs\n\n\nAudit trails\n\n\nE: Provide Transparency & Instructions (Article 13)\nActions:\nDraft clear instructions for use:\n\n\nWhat the AI does and how it should be used\n\n\nCapabilities, limitations, risks\n\n\nEnsure the system informs users when they are interacting with AI\n\n\nLabel and document:\n\n\nVersion number, manufacturer info, CE marking, etc.\n\n\nDeliver as:\nUser manual\n\n\nUI messaging (where applicable)\n\n\nOnline help/support docs\n\n\nF: Ensure Human Oversight Measures (Article 14)\nActions:\nDefine what human oversight looks like:\n\n\nWhat decisions humans can override\n\n\nWhen humans must intervene\n\n\nAdd interface tools to allow intervention (e.g., pause, override, alerts)\n\n\nTrain staff responsible for oversight\n\n\nInclude:\nOversight design features\n\n\nRole descriptions and training materials\n\n\nG: Validate Accuracy, Robustness, Cybersecurity (Article 15)\nActions:\nTest system accuracy under realistic scenarios\n\n\nRun stress tests to identify failure thresholds\n\n\nImplement robustness measures:\n\n\nError handling\n\n\nRedundancy\n\n\nApply cybersecurity safeguards:\n\n\nThreat modeling\n\n\nEncryption, secure APIs, access controls\n\n\nDocumentation:\nPerformance testing results\n\n\nThreat modeling reports\n\n\nCybersecurity policy\n\n\nH: Check for Harmonised Standards or Common Specifications\nActions:\nVisit EU publications or CEN/CENELEC websites\n\n\nSearch for applicable harmonised standards (e.g., ISO/IEC 42001, ISO/IEC 23894)\n\n\nApply these standards to simplify compliance\n\n\nDocument how you comply or justify deviations\n\n\nIf no harmonised standard exists: follow \"state of the art\" methods and document choices\n\nI: Finalise and Retain Your Technical File\nInclude:\nAll documentation from Steps 2–9\n\n\nDeclaration of Conformity\n\n\nCE marking process documentation\n\n\nInternal sign-off checklist\n\n\nStore securely with version control and access restrictions\nKeep updated as system changes or new risks emerge\nSTEP 3: Register Your High-Risk AI System\nReference: Article 51\nActions:\nSubmit information to the EU public database for high-risk AI systems:\n\n\nYour company info\n\n\nSystem description\n\n\nConformity details\n\n\nInstructions for use\n\n\nPost-market monitoring plan\n\n\nPlatform: EU Commission-managed digital registration tool\nSTEP 4: Implement Ongoing Post-Market Monitoring\nReference: Article 61\nActions:\nDeploy procedures to continuously:\n\n\nMonitor performance\n\n\nTrack real-world use\n\n\nRecord and respond to malfunctions or failures\n\n\nReporting obligation: If a serious incident occurs, notify the relevant authority within 15 days.\n\nSTEP 5: Ensure Corrective Actions for Non-Compliance\nReference: Article 16(d)\nActions:\nCreate an internal process to:\n\n\nIdentify non-compliance\n\n\nTake corrective actions (e.g., software updates, usage restrictions)\n\n\nCommunicate with relevant authorities and users\n\n\nSTEP 6: Ensure CE Marking & Declaration of Conformity\nReference: Article 49\nActions:\nAffix the CE marking on the system\n\n\nDraft and sign an EU Declaration of Conformity\n\n\nInclude: name, system ID, standards applied, date, signature\n\n\nSTEP 7: Maintain Comprehensive Technical Documentation\nReference: Article 11\nActions:\nKeep documentation that shows how your AI complies with the Act, including:\n\n\nSystem architecture and components\n\n\nData management practices\n\n\nLifecycle risk assessments\n\n\nValidation and testing methods\n\n\nMust retain this documentation for 10 years after placing the system on the market.\n\nSTEP 8: Appoint an EU-Based Authorised Representative (if not in the EU)\nReference: Article 25\nActions:\nIf your company is outside the EU, designate an authorized representative in the EU who can:\n\n\nAct on your behalf for compliance and communication\n\n\nBe liable for non-compliance\n\n\nSTEP 9: Labeling & Transparency Obligations\nReference: Article 13\nActions:\nInclude clear instructions and labels on the system:\n\n\nIntended purpose\n\n\nHow to use the system safely\n\n\nHuman oversight guidance\n\n\nRisks or limitations\n\n\nProvide this with the product AND in digital format.\nSTEP 10: Enable Human Oversight\nReference: Article 14\nActions:\nDesign features that allow humans to:\n\n\nUnderstand the system's functioning\n\n\nIntervene or override when needed\n\n\nPrevent or minimize risks\n\n\nTrain personnel in how to supervise and interact with the system safely.\n\n\n\nProviders and Deployers: art. 16 \n\nArt. 16(d) is especially relevant \nProviders: Risk management system •Data governance •Quality management • Technical documentation •Record keeping and document keeping • Provision of information to deployers •Human oversight •Accuracy, robustness and cybersecurity •Automatically generated logs • Transparency\nDeployers: Apply provider’s instructions for use of AI system •Guarantee human oversight • Validate input data to ensure its suitability for intended use • Continuous monitoring of AI system’s activity • Report any malfunctions, incidents, or risks to the AI system’s provider or distributor promptly • Save logs if under their control • Fundamental rights impact assessment for certain systems\nImporter & distributors:  Verify whether the AI system is in line with the requirements and formalities in the AI Act • Keeping conformity certifications for ten years •Withdraw, recall or refrain from placing the AI system on the market if it is non-compliant •Cooperation with competent authorities\n\n\n\n\n\nTransparency Obligations for Limited Risk\n\nStep 1: Determine Your Role\nProvider: You develop or offer the AI system.\n\n\nDeployer: You use the AI system in your operations.\n\n\nBoth: You both develop and use the AI system.\n\n\nYour obligations depend on your role. For instance, if you integrate a third-party chatbot into your website, you're a deployer. If you build and offer the chatbot to others, you're a provider.\nStep 2: Implement Provider Obligations (if applicable)\nIf you're a provider, ensure the following:\n2.1 Inform Users of AI Interaction\nRequirement: Design AI systems that interact directly with individuals (e.g., chatbots) to inform users they're engaging with AI.\n\n\nException: If it's obvious to a reasonably well-informed person that they're interacting with AI, this disclosure isn't necessary.\n\n\nNote: This doesn't apply to AI systems authorized by law for criminal offense detection or prevention, unless they're publicly accessible for reporting crimes.\n\n\n2.2 Label Synthetic Content\nRequirement: Ensure AI-generated content (audio, images, videos, text) is:\n\n\nMarked in a machine-readable format.\n\n\nDetectable as artificially generated or manipulated.\n\n\nImplementation: Use effective, interoperable, robust, and reliable technical solutions, considering:\n\n\nContent characteristics and limitations.\n\n\nImplementation costs.\n\n\nState-of-the-art standards.\n\n\nException: This doesn't apply to AI systems that assist with standard editing or don't significantly alter input data or its semantics.\n\n\nStep 3: Fulfill Deployer Obligations (if applicable)\nIf you're a deployer, adhere to the following:\n3.1 Disclose Deepfakes\nRequirement: Clearly indicate when content (images, audio, video) has been artificially generated or manipulated to resemble real entities or events.\n\n\nExceptions:\n\n\nContent used for criminal offense detection or prevention, authorized by law.\n\n\nArtistic, creative, satirical, or fictional works, where disclosure should be appropriate and not interfere with the work's enjoyment\n\n\n3.2 Disclose AI-Generated Text on Public Matters\nRequirement: Inform readers when AI-generated or manipulated text is disseminated on matters of public interest.\n\n\nExceptions:\n\n\nUse authorized by law for criminal offense detection or prevention.\n\n\nContent subjected to human review or editorial control, with a natural or legal person holding editorial responsibility.\n\n\n3.3 Inform About Emotion Recognition or Biometric Categorization\nRequirement: Notify individuals when they're exposed to AI systems performing emotion recognition or biometric categorization.\n\n\nCompliance: Ensure personal data processing aligns with the EU General Data Protection Regulation (GDPR).\n\n\nException: AI systems used for criminal offense detection or prevention, authorized by law, provided appropriate safeguards are in place.\n\n\nStep 4: Provide Clear and Accessible Notices\nTiming: Deliver required information at the first interaction or exposure to the AI system.\n\n\nClarity: Ensure disclosures are clear and distinguishable.\n\n\nAccessibility: Present information in formats accessible to individuals with disabilities, considering vulnerable groups due to age or disability.\nStep 5: Prepare for Compliance by August 2026\nEffective Date: Transparency requirements under Article 50 apply from 2 August 2026.\n\n\nAction: Begin implementing necessary changes well in advance to ensure full compliance by this date.\n\nEND OF LEGAL OBLIGATIONS\n\nMoreover, when the product is classified as high risk, the legal obligations include:\nSTART OF DOCUMENTS NEEDED FOR HIGH RISK:\nList of all documents that must be created \n1. Instructions for Use Acknowledgement\nInternal confirmation that the deployer has received, reviewed, and implemented the provider’s instructions for use.\n\n\nDocumented procedures for ensuring the system is used in accordance with these instructions.\n\n\n2. Human Oversight Plan\nAssignment letter/designation of the human overseer(s).\n\n\nTraining records of human overseers showing competence and awareness.\n\n\nOversight protocols detailing how and when humans can intervene or override the system.\n\n\n3. Internal Governance Framework\nInternal compliance and risk management plan aligning oversight, use, and risk mitigation measures with the EU AI Act.\n\n\nOrganizational policy for integrating the high-risk AI system into business processes.\n\n\n4. Data Management and Input Data Assessment\nDocumentation showing that input data is:\n\n\nRelevant to the intended use.\n\n\nSufficiently representative of the target population or context.\n\n\nRecords of bias audits, data validation, and pre-processing steps.\n\n\n5. Monitoring and Incident Reporting Protocol\nSystem performance monitoring strategy.\n\n\nTemplates and logs of incidents, anomalies, or risks.\n\n\nNotification templates for informing providers, distributors, and market surveillance authorities.\n\n\nRisk escalation procedures and evidence of their implementation.\n\n\n6. System Log Storage Policy\nRetention schedule for logs (minimum of 6 months, or longer if required).\n\n\nDescription of logging infrastructure and access controls.\n\n\nDocumentation showing compliance with GDPR and national data protection laws.\n\n\n7. Workplace Use Notification\nEmployee notification letters or internal memos informing workers of AI deployment.\n\n\nDocumentation of consultations with workers’ representatives (if applicable).\n\n\nRecords showing timing and content of the notification.\n\n\n8. EU AI Database Registration Record (Public sector only)\nProof of registration of the AI system in the EU AI database (Article 71).\n\n\nDocumentation showing the system was not deployed prior to registration.\n\n\n9. Data Protection Impact Assessment (DPIA)\nDPIA performed under Article 35 GDPR or Article 27 of Directive 2016/680.\n\n\nIncorporation of AI system risks, especially regarding automated decision-making, profiling, or biometric data.\n\n\n10. Authorisation Records for Post-Remote Biometric ID (Law Enforcement Only)\nJudicial or administrative authorisation documents.\n\n\nJustification for use, based on objective and verifiable facts.\n\n\nImmediate action records following rejected authorisations.\n\n\nDocumentation of deletion of personal data where required.\n\n\n11. Use Documentation for Biometric ID (Law Enforcement Only)\nEntry in investigation/police files documenting every use of the biometric system.\n\n\nAnnual reports to national data protection and market surveillance authorities.\n\n\nEnsure exclusion of sensitive operational data.\n\n\n12. Transparency Notice to Natural Persons\nTemplates or actual copies of information notices given to individuals affected by the AI system.\n\n\nLanguage must be clear, accessible, and aligned with Articles 13–14 of the GDPR.\n\n\n13. Cooperation and Audit Files\nRecords of all communication with supervisory and market surveillance authorities.\n\n\nResponses to audit requests or investigations.\n\n\nInternal audit reports or compliance self-assessments.\n\n\n14. Contractual Agreements (optional but recommended)\nAgreements with the AI provider, defining shared responsibilities (e.g., maintenance, incident handling, support).\n\n\nData processing agreements (DPAs) under GDPR if personal data is involved.\n\n\nEND OF DOCUMENTS NEEDED FOR HIGH RISK\n\nSTART OF CODE BASE SUMMARY \n\n{{ $('Summarize Codebase').item.json.response.text }}\n\nEND OF CODE BASE SUMMARY \n\nSTART OUTPUT REQUIREMENTS \nClassification: assign the code into one of the four risk categories defined in the EU AI Act \nMain reasons: provide main arguments which led to the classification into one of the categories\nLegal obligations: provide a list of legal obligations derived from the given classification in line with the information under legal obligations section \nEND OUTPUT REQUIREMENTS \n",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        220,
+        -200
+      ],
+      "id": "100e8134-b85b-4873-b000-4fbe699970ec",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{$json}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.2,
+      "position": [
+        1280,
+        -200
+      ],
+      "id": "ad7cc279-6832-448d-8ab5-566b490db323",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "resource": "repository",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $json.body.repo_url.replace(/\\/$/, '').split('/').slice(0,4).join('/') }}\n",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $json.body.repo_url }}",
+          "mode": "url"
+        }
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        -440,
+        -200
+      ],
+      "id": "1681f3a4-e51a-4cc4-baf5-93cadd9ab3c3",
+      "name": "GitHub",
+      "webhookId": "0e60bb3c-3d87-4165-b939-a4593b78df96",
+      "credentials": {
+        "githubApi": {
+          "id": "FCSeqXXpUoXIzRrR",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -420,
+        60
+      ],
+      "id": "fcd4bf01-0434-418c-892e-a10f1bfc2398",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "TIlEJNrhwBqoTQiN",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        40
+      ],
+      "id": "9c088137-7a8b-4b6e-8221-6465a694f20b",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "TIlEJNrhwBqoTQiN",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chunkSize": 2000,
+        "chunkOverlap": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        220
+      ],
+      "id": "46b1dbf5-6831-4006-a5bd-65fbfb626ee8",
+      "name": "Token Splitter"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        140,
+        -620
+      ],
+      "id": "083ee40e-d4d0-4289-a002-13da1814a0ae",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "TIlEJNrhwBqoTQiN",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "repository": "={{ $('Webhook').item.json.body.repo_url }}",
+        "branch": "={{ $('Webhook').item.json.body.branch_name }}",
+        "additionalOptions": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentGithubLoader",
+      "typeVersion": 1,
+      "position": [
+        380,
+        -600
+      ],
+      "id": "0806d696-4740-43d9-9484-457cf1117ffb",
+      "name": "GitHub Document Loader1",
+      "credentials": {
+        "githubApi": {
+          "id": "FCSeqXXpUoXIzRrR",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chunkSize": 2000,
+        "chunkOverlap": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+      "typeVersion": 1,
+      "position": [
+        540,
+        -440
+      ],
+      "id": "8cf42c85-95e9-4a38-a71d-54c6c7f7ce12",
+      "name": "Token Splitter1"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        300,
+        40
+      ],
+      "id": "5b7e63bb-a1dd-4f94-8efa-0904e6fbb0fc",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        660
+      ],
+      "id": "c3812f6e-f4c6-4a62-a349-fb9ef5738aac",
+      "name": "Embeddings OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "TIlEJNrhwBqoTQiN",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "memoryKey": "={{ $('Webhook').item.json.body.repo_url }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.1,
+      "position": [
+        220,
+        500
+      ],
+      "id": "233febf4-c879-4525-a360-043f437f0d24",
+      "name": "Codebase Vector store"
+    },
+    {
+      "parameters": {
+        "repository": "={{ $('Webhook').item.json.body.repo_url }}",
+        "branch": "={{ $('Webhook').item.json.body.branch_name }}",
+        "additionalOptions": {
+          "recursive": false,
+          "ignorePaths": "test_clickup.py, old_bot_handler.py, test_mention.py, testbot.py, update_bot.py, /tasteray_env, .gitattributes, .gitignore, package-lock.json"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentGithubLoader",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        20
+      ],
+      "id": "6a4cc911-ab9d-4130-b967-1fa424c13c27",
+      "name": "Github Loader",
+      "credentials": {
+        "githubApi": {
+          "id": "FCSeqXXpUoXIzRrR",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operationMode": "documentLoader",
+        "options": {
+          "summarizationMethodAndPrompts": {
+            "values": {
+              "combineMapPrompt": "You will be given a piece of code. Your task is to summarize what it does and try to spot any of the important factors your are given. If you spot any from the list, please focus on them. If you suspect that this code might be used for any of the factors from the list, mention it. However, mention only that it might do that and that its only suspicions. Mention any relevant function names, services, providers, or other technical implementation details that seem important. Make it concise and clear.\n\nLIST OF IMPORTANT FACTORS:\n   * Uses biometric identification \n   * Uses biometric categorisation \n   * The system uses IoT sensors \n   * Makes decisions about movement of objects  \n   * Makes decisions about continuing of a machine operation \n   * Assigns scores to users \n   * Evaluates the performance of users \n   * Captures real-time bodily movements \n   * Captures video footage \n   * generate feedback based on sensor input \n   * Evaluation of user’s past achievements \n   * Assigns scores to database inputs \n   * Determines user’s access to applications, functions and databases \n   * Determining user’s payout/compensation/reward/salary\n   * Sends signals to other users (eg. police, courts…) once certain conditions are met \n   * Generates text, audio, visual or image content \n   * Integrates/ interacts with other systems/AIs\n   * Creates labels for data points/inputs \n   * Classifying users based on known data \n   * Making inferences about users based on data\n   * Controlling which decisions the user is allowed to make\n   * Make inferences about decision patterns \n   * Alter user’s decision patterns \n   * Create reputation score\n   * Create social score\n   * Create social rating\n   * Assign values to users\n   * Rate users\n   * Compare users\n   * Rank users\n   * Emotion recognition\n   * Scrape dataset\n   * Inference models identifying race, gender, age, etc.\n   * Use public datasets\n   * Profiles users based on behavior, location, or personal traits.\n\nEND OF LIST, BEGINNING OF THE CODE FRAGMENT:\n\n\"{text}\"\n\n\nCONCISE SUMMARY:",
+              "prompt": "You are given a list of descriptions of code. Your task is to combine these descriptions into one big summary. Make it concise but don't omit any details. Include all technical implementation elements that might be relevant. Moreover, pay special attention to anything that might be on the list of very important factors. I\n\nLIST OF VERY IMPORTANT FACTORS:\n   * Uses biometric identification \n   * Uses biometric categorisation \n   * The system uses IoT sensors \n   * Makes decisions about movement of objects  \n   * Makes decisions about continuing of a machine operation \n   * Assigns scores to users \n   * Evaluates the performance of users \n   * Captures real-time bodily movements \n   * Captures video footage \n   * generate feedback based on sensor input \n   * Evaluation of user’s past achievements \n   * Assigns scores to database inputs \n   * Determines user’s access to applications, functions and databases \n   * Determining user’s payout/compensation/reward/salary\n   * Sends signals to other users (eg. police, courts…) once certain conditions are met \n   * Generates text, audio, visual or image content \n   * Integrates/ interacts with other systems/AIs\n   * Creates labels for data points/inputs \n   * Classifying users based on known data \n   * Making inferences about users based on data\n   * Controlling which decisions the user is allowed to make\n   * Make inferences about decision patterns \n   * Alter user’s decision patterns \n   * Create reputation score\n   * Create social score\n   * Create social rating\n   * Assign values to users\n   * Rate users\n   * Compare users\n   * Rank users\n   * Emotion recognition\n   * Scrape dataset\n   * Inference models identifying race, gender, age, etc.\n   * Use public datasets\n   * Profiles users based on behavior, location, or personal traits.\n\nEND OF LIST OF VERY IMPORTANT FACTORS, START OF TEXT:\n\n\"{text}\"\n\n\nCOMBINED TEXT:"
+            }
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainSummarization",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        -200
+      ],
+      "id": "507564b9-8b36-45af-9cd9-a6e12f3401ab",
+      "name": "Summarize Codebase",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "memoryKey": "={{ $('Webhook').item.json.body.repo_url }}",
+        "clearStore": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.1,
+      "position": [
+        160,
+        -780
+      ],
+      "id": "115cbc84-6bc0-4b8c-b043-d7dd9d5fe863",
+      "name": "Embed Codebase"
+    },
+    {
+      "parameters": {
+        "description": "User's codebase, split into fragments",
+        "topK": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1.1,
+      "position": [
+        400,
+        280
+      ],
+      "id": "2d7fc794-7f35-4c05-9324-2e0b9448b30c",
+      "name": "Answer Questions About Codebase"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        520,
+        500
+      ],
+      "id": "0e637c0e-1f97-4310-b8e3-63dd65f1199d",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "TIlEJNrhwBqoTQiN",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        -500
+      ],
+      "id": "f0d0316c-46af-4508-b3e2-717d583204b1",
+      "name": "Embeddings OpenAI2",
+      "credentials": {
+        "openAiApi": {
+          "id": "TIlEJNrhwBqoTQiN",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "repository": "https://github.com/Stasieniec/eu-ai-act",
+        "additionalOptions": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentGithubLoader",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        -500
+      ],
+      "id": "df3b0a37-769b-4898-a692-3691c05e13c1",
+      "name": "GitHub Document Loader",
+      "credentials": {
+        "githubApi": {
+          "id": "FCSeqXXpUoXIzRrR",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chunkOverlap": 50
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        -340
+      ],
+      "id": "61130eb4-c74f-48e5-804b-06e84497bb0a",
+      "name": "Token Splitter2"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "memoryKey": "eu_ai_act",
+        "clearStore": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.1,
+      "position": [
+        -360,
+        -740
+      ],
+      "id": "389aa2e7-07ec-4e3c-b195-945ff89c6e5f",
+      "name": "EU AI ACT Vector store",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "description": "EU AI Act in its entirety",
+        "topK": 5
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1.1,
+      "position": [
+        720,
+        280
+      ],
+      "id": "f1fda39c-6af5-401e-ae37-012fec2f3128",
+      "name": "Answer questions about AI Act"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        940,
+        500
+      ],
+      "id": "a249906f-a092-4965-8bf2-02ec2a0315fb",
+      "name": "OpenAI Chat Model3",
+      "credentials": {
+        "openAiApi": {
+          "id": "TIlEJNrhwBqoTQiN",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        640,
+        660
+      ],
+      "id": "2503cb8d-15f7-41fe-9c03-a8cd260683f6",
+      "name": "Embeddings OpenAI3",
+      "credentials": {
+        "openAiApi": {
+          "id": "TIlEJNrhwBqoTQiN",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "memoryKey": "eu_ai_act"
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.1,
+      "position": [
+        660,
+        500
+      ],
+      "id": "9ccc4e90-3f56-4f1f-ba9d-d0d6c3c85604",
+      "name": "EU AI Act"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Your job is to transformed provided text into a json object. Make sure to return a valid json object even if the text does not make sense. Dont change the content of the text but just structure it into appropriate JSON fields. Here is an example of a correct json:\n{\n  \"classification\": \"High risk\",\n  \"assessment\": \"The repository collects and processes biometric user data for identification, which is listed as high risk under Annex III of the EU AI Act.\",\n  \"legal_obligations\": [\n    \"Implement a risk management system.\",\n    \"Maintain detailed technical documentation.\",\n    \"Enable logging and human oversight.\",\n    \"Conduct conformity assessments.\",\n    \"Register the system in the EU database for high-risk AI systems.\"\n  ]\n}\n\nAlways use these 3 fields!\n\nHERE IS THE TEXT YOU HAVE TO TRANSFORM:\n{{ $json.output }}"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        620,
+        -200
+      ],
+      "id": "6d13e2ab-4183-464f-a784-fbefe81174a6",
+      "name": "OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "TIlEJNrhwBqoTQiN",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a237528b-75b0-43ec-96b8-c07d2adabe96",
+              "name": "classification",
+              "value": "={{ $json.message.content.classification }}",
+              "type": "string"
+            },
+            {
+              "id": "de309451-8224-42d6-bd65-eb4644b49283",
+              "name": "assessment",
+              "value": "={{ $json.message.content.assessment }}",
+              "type": "string"
+            },
+            {
+              "id": "3fc113e8-8431-42b6-8a1f-1a4cffe5e00f",
+              "name": "legal_obligations",
+              "value": "={{ $json.message.content.legal_obligations }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        980,
+        -200
+      ],
+      "id": "bcce7612-7d27-43dc-a294-a8f2ff66a195",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "GitHub",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "EU AI ACT Vector store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub": {
+      "main": [
+        [
+          {
+            "node": "Summarize Codebase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Summarize Codebase",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Token Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Github Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Embed Codebase",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Document Loader1": {
+      "ai_document": [
+        [
+          {
+            "node": "Embed Codebase",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Token Splitter1": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "GitHub Document Loader1",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Codebase Vector store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Codebase Vector store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Answer Questions About Codebase",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Github Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Summarize Codebase",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarize Codebase": {
+      "main": [
+        [
+          {
+            "node": "Embed Codebase",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embed Codebase": {
+      "main": [
+        []
+      ]
+    },
+    "Answer Questions About Codebase": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Answer Questions About Codebase",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI2": {
+      "ai_embedding": [
+        [
+          {
+            "node": "EU AI ACT Vector store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Document Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "EU AI ACT Vector store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Token Splitter2": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "GitHub Document Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EU AI ACT Vector store": {
+      "main": [
+        []
+      ]
+    },
+    "Answer questions about AI Act": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Answer questions about AI Act",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI3": {
+      "ai_embedding": [
+        [
+          {
+            "node": "EU AI Act",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EU AI Act": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Answer questions about AI Act",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "c84e5e11-61fd-4b95-9a30-30863570a535",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f2c229c21742b565ec9370f6d1d6c6df42ecc4fe481398ddb94c312ba47b2b82"
+  },
+  "id": "FuZa1kSV6PJqpfzU",
+  "tags": [
+    {
+      "createdAt": "2025-05-17T10:00:57.943Z",
+      "updatedAt": "2025-05-17T10:00:57.943Z",
+      "id": "YUV7MXVawcD7J9DH",
+      "name": "Law Hackathon"
+    }
+  ]
+}
